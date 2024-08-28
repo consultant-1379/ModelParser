@@ -1,0 +1,101 @@
+Usage
+ 
+  Brief examples on how to use the parser goals.
+ 
+* Generic Plugin configuration information
+
+  See the following links for information about including and configuring plugins in your project:
+  
+  *{{{http://maven.apache.org/guides/mini/guide-configuring-plugins.html}Configuring Plugins}}
+  
+  *{{{http://maven.apache.org/guides/plugin/guide-java-plugin-development.html}Plugin Development}}
+
+  *{{{http://maven.apache.org/guides/introduction/introduction-to-plugin-prefix-mapping.html}Plugin Prefix}}
+
+* The <<<model-parser:jdo>>> mojo
+
+   This goal is meant to be bound to the generate\-sources phase and configured in your
+   <<<pom.xml>>>. It will parse the XML files, by default to be searched in <src/main/config/models> (this can be 
+   changed through configuration) and generate JDO Java classes in the default output directory, by default in
+   <target/generated\-sources/model-parser>, unless another one is provided in the configuration
+   
+     []
+
+   Configure the plugin something like this if you intend to bind it to execute along with your build:
+
++---+
+<project>
+  [...]
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.ericsson.oss.one.platform.data-layer</groupId>
+        <artifactId>model-parser</artifactId>
+        <version>${project.version}</version>
+        <executions>
+          <execution>
+            <id>generate-entities</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>jdo</goal>
+            </goals>
+            <configuration>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  [...]
+</project>
++---+
+  
+  If you intend to configure this mojo for execution on the command line using:
+
++---+
+mvn model-parser:jdo
++---+
+
+* The <<<model-parser:xsl>>> mojo
+
+   This goal is meant to be bound to the generate\-sources phase and configured in your
+   <<<pom.xml>>>. It will parse the XML files, by default to be searched in <src/main/config/models> (this can be 
+   changed through configuration) and apply an XSL template, by default to be located in
+   <src/main/config/xsl/modelparser.xsl>. 
+   
+     []
+
+   Configure the plugin something like this if you intend to bind it to execute along with your build:
+
++---+
+<project>
+  [...]
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.ericsson.oss.one.platform.data-layer</groupId>
+        <artifactId>model-parser</artifactId>
+        <version>${project.version}</version>
+        <executions>
+          <execution>
+            <id>generate-anything-that-xsl-says</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>xsl</goal>
+            </goals>
+            <configuration>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  [...]
+</project>
++---+
+  
+  If you intend to configure this mojo for execution on the command line using:
+
++---+
+mvn model-parser:xsl
++---+

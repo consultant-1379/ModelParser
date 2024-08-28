@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+	name="${project.name}">
+
+	<bannerLeft>
+		<name>Ericsson</name>
+		<src>img/logo.png</src>
+		<href>http://www.ericsson.se</href>
+	</bannerLeft>
+
+	<bannerRight>
+		<name>MIB Model Parser</name>
+		<src>img/model-parser.png</src>
+		<href>https://eforge.ericsson.se/sf/scm/do/listRepositories/projects.end2end_workflow/scm
+		</href>
+	</bannerRight>
+
+	<publishDate format="dd MMM yyyy" position="left" />
+	<version position="left" />
+
+	<body>
+		<links>
+			<item name="How to create a Maven Site" href="http://maven.apache.org/guides/mini/guide-site.html" />
+			<item name="Our nexus repository" href="http://10.42.37.130/nexus" />
+			<item name="Subversion repo for this project" href="https://eforge.ericsson.se/svn/repos/model-parser" />
+		</links>
+		<menu name="Overview">
+			<item name="Introduction" href="index.html" />
+			<!--  item name="Goals" href="plugin-info.html" /-->
+			<item name="Usage" href="usage.html" />
+		</menu>
+	</body>
+
+</project>

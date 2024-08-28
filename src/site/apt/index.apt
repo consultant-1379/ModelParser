@@ -1,0 +1,21 @@
+Maven Model Parser Plugin
+
+  The model parser plugin provides the capability to generate Java persistent classes
+  in JDO and other persistence technologies (i.e. JPA) from a set of MIM XML files defining an Ericsson OSS data storage.
+  
+* Goals Overview
+
+  The Model Parser plugin has the following goals:
+  
+  * model-parser:jdo generates JDO entities by invoking legacy Java classes that parse the XML files
+  
+  * model-parser:xsl generates Java source code by invoking a Xalan transformer and applying provided
+  XSL templates to the given XML files
+  
+  []
+  
+* Usage
+
+   General instructions on how to use the Model Parser Plugin can be found on the {{{./usage.html}usage page}}.
+
+  
